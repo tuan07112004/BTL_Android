@@ -1,5 +1,6 @@
 package com.example.oke.activity;
 
+<<<<<<< HEAD
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -54,10 +55,18 @@ public class AdminHome extends AppCompatActivity {
     FirebaseFirestore db; // Kết nối Firestore
 
 
+=======
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import com.example.oke.R;
+
+public class AdminHome extends AppCompatActivity {
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_home);
+<<<<<<< HEAD
 
         apiBanHang = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiBanHang.class);
         db = FirebaseFirestore.getInstance(); // Khởi tạo Firebase Firestore
@@ -218,3 +227,7 @@ public class AdminHome extends AppCompatActivity {
     }
 
 }
+=======
+    }
+}
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962

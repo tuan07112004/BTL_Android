@@ -6,7 +6,11 @@ public class SanPhamMoi implements Serializable {
     int id;
     String tensp;
     String hinhanh;
+<<<<<<< HEAD
     int gia;
+=======
+    String giasp;
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
     String mota;
     int loai;
     String linkvideo;
@@ -52,12 +56,21 @@ public class SanPhamMoi implements Serializable {
         this.hinhanh = hinhanh;
     }
 
+<<<<<<< HEAD
     public int getGia() {
         return gia;
     }
 
     public void setGia(int gia) {
         this.gia = gia;
+=======
+    public String getGiasp() {
+        return giasp;
+    }
+
+    public void setGiasp(String giasp) {
+        this.giasp = giasp;
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
     }
 
     public String getMota() {
@@ -75,4 +88,8 @@ public class SanPhamMoi implements Serializable {
     public void setLoai(int loai) {
         this.loai = loai;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962

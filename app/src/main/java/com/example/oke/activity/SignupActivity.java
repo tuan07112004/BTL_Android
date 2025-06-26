@@ -38,16 +38,24 @@ public class SignupActivity extends AppCompatActivity {
         edrppassword = findViewById(R.id.edrppassword);
         btnsignup = findViewById(R.id.btnsignup);
         txtLogin = findViewById(R.id.txtLogin);
+<<<<<<< HEAD
         mAuth = FirebaseAuth.getInstance(); // Lấy đối tượng Firebase Auth
 
 
         //Sự kiện khi nhấn nút "Đăng ký"
+=======
+        mAuth = FirebaseAuth.getInstance();
+
+
+
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
         btnsignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String email = edemail.getText().toString();
                 String password = edpassword.getText().toString();
                 String rppassword = edrppassword.getText().toString();
+<<<<<<< HEAD
                 // Kiểm tra đầu vào
                 if(email.equals("")||password.equals("")||rppassword.isEmpty()){
                     Toast.makeText(SignupActivity.this,"vui lòng nhập đầy đủ!", Toast.LENGTH_SHORT).show();
@@ -59,6 +67,18 @@ public class SignupActivity extends AppCompatActivity {
                 }
                 if (!isValidEmail(email)) {
                     Toast.makeText(SignupActivity.this,"Địa chỉ email không hợp lệ!", Toast.LENGTH_SHORT).show();
+=======
+                if(email.equals("")||password.equals("")||rppassword.isEmpty()){
+                    Toast.makeText(SignupActivity.this, "vui lòng nhập đầy đủ!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (!password.equals(rppassword)){
+                    Toast.makeText(SignupActivity.this,    "mật khẩu không khớp nhau!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (!isValidEmail(email)) {
+                    Toast.makeText(SignupActivity.this, "Địa chỉ email không hợp lệ!", Toast.LENGTH_SHORT).show();
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
                     return;
                 }
                 if (password.length() < 6 || !Character.isUpperCase(password.charAt(0))) {
@@ -66,7 +86,10 @@ public class SignupActivity extends AppCompatActivity {
                     return;
                 }
 
+<<<<<<< HEAD
                 // Tạo tài khoản với Firebase
+=======
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
                 mAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -76,11 +99,19 @@ public class SignupActivity extends AppCompatActivity {
                                     Log.d(TAG, "createUserWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     Intent in = new Intent(SignupActivity.this, LoginActivity.class);
+<<<<<<< HEAD
                                     in.putExtra("email",email); // Truyền email sang login
+=======
+                                    in.putExtra("email",email);
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
                                     in.putExtra("password",password);
                                     startActivity(in);
                                     Toast.makeText(SignupActivity.this, "Đăng Kí Thành Công!",
                                             Toast.LENGTH_SHORT).show();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
                                 } else {
                                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
                                     Toast.makeText(SignupActivity.this, "Authentication failed.",
@@ -90,8 +121,11 @@ public class SignupActivity extends AppCompatActivity {
                         });
             }
         });
+<<<<<<< HEAD
 
         //Chuyển sang màn đăng nhập nếu đã có tài khoản
+=======
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
         txtLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,6 +133,10 @@ public class SignupActivity extends AppCompatActivity {
                 startActivity(in);
             }
         });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
     }
     private boolean isValidEmail(String email) {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches();

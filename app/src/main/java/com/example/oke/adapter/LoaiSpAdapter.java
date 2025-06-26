@@ -7,9 +7,14 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+<<<<<<< HEAD
 import com.bumptech.glide.Glide;
 
 
+=======
+
+import com.bumptech.glide.Glide;
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
 import com.example.oke.R;
 import com.example.oke.model.LoaiSp;
 
@@ -36,8 +41,11 @@ public class LoaiSpAdapter  extends BaseAdapter {
     public long getItemId(int position) {
         return 0;
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
     public class ViewHolder{
         TextView texttensp;
         ImageView imghinhanh;
@@ -49,7 +57,11 @@ public class LoaiSpAdapter  extends BaseAdapter {
         if (view == null){
             viewHolder = new ViewHolder();
             LayoutInflater layoutInflater= (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+<<<<<<< HEAD
             view = layoutInflater.inflate(R.layout.item_sanpham, null);
+=======
+            view = layoutInflater.inflate(R.layout.item_sanpham,null);
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
             viewHolder.texttensp = view.findViewById(R.id.item_tensp);
             viewHolder.imghinhanh = view. findViewById(R.id.item_image);
             view.setTag(viewHolder);

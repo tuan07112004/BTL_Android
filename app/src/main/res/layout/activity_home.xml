@@ -6,7 +6,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".activity.HomeActivity">
+=======
+    tools:context=".activity.MainActivity">
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawerlayout"
         android:layout_width="match_parent"
@@ -89,8 +93,11 @@
                     android:text="Sản phẩm mới nhất"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycleview"
                     android:layout_width="match_parent"

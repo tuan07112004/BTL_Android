@@ -1,6 +1,9 @@
 package com.example.oke.model;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
 public class LoaiSp {
     int id;
     String tensanpham;
@@ -34,4 +37,8 @@ public class LoaiSp {
     public void setHinhanh(String hinhanh) {
         this.hinhanh = hinhanh;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962

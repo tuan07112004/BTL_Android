@@ -18,7 +18,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingTop="5dp"
+<<<<<<< HEAD
             android:paddingBottom="5dp">
+=======
+        android:paddingBottom="5dp">
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
 
             <ImageView
                 android:id="@+id/itemsp_image"
@@ -27,6 +31,7 @@
                 android:src="@drawable/ic_media_24" />
 
             <TextView
+<<<<<<< HEAD
                 android:id="@+id/itemsp_ten"
                 android:text="Laptop"
                 android:textSize="18sp"
@@ -47,6 +52,28 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"/>
         </LinearLayout>
+=======
+            android:id="@+id/itemsp_ten"
+            android:text="Laptop"
+            android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/itemsp_gia"
+            android:text="Gia:2500000"
+            android:textSize="14sp"
+        android:textColor="@android:color/holo_red_light"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"/>
+    </LinearLayout>
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
 
         <ImageView
             android:layout_width="54dp"
@@ -54,6 +81,12 @@
             android:layout_gravity="top|left"
             android:src="@drawable/iconnew" />
 
+<<<<<<< HEAD
     </FrameLayout>
 
 </androidx.cardview.widget.CardView>
+=======
+</FrameLayout>
+
+    </androidx.cardview.widget.CardView>
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962

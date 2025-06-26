@@ -30,4 +30,8 @@ public class SanPhamMoiModel {
     public void setResult(List<SanPhamMoi> result) {
         this.result = result;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962

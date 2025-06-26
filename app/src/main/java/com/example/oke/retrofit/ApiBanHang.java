@@ -1,5 +1,6 @@
 package com.example.oke.retrofit;
 
+<<<<<<< HEAD
 import io.reactivex.rxjava3.core.Observable;
 
 import com.example.oke.model.LoaiSpModel;
@@ -60,6 +61,43 @@ public interface ApiBanHang {
             @Field("linkvideo") String linkvideo,
             @Field("sltonkho") int sltonkho,
             @Field("id") int id
+=======
+
+import io.reactivex.rxjava3.core.Observable;
+
+
+import com.example.oke.model.KhuyenMaiModel;
+import com.example.oke.model.LoaiSpModel;
+import com.example.oke.model.SanPhamMoiModel;
+
+
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
+
+public interface ApiBanHang {
+    // GET DATA
+    @GET("getloaisp.php")
+    Observable<LoaiSpModel> getLoaiSp();
+    @GET("getspmoi.php")
+    Observable <SanPhamMoiModel> getSpMoi();
+
+    @POST("chitiet.php")
+    @FormUrlEncoded
+    Observable<SanPhamMoiModel> getSanPham(
+
+            @Field("loai") int  loai
+    );
+
+    @GET("khuyenmai.php")
+    Observable<KhuyenMaiModel> getKhuyenMai();
+
+    @POST("timkiem.php")
+    @FormUrlEncoded
+    Observable<SanPhamMoiModel> search(
+            @Field("search") String search
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
     );
 
 }

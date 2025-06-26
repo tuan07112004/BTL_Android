@@ -4,56 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".activity.LoginActivity"
     android:gravity="center"
     android:orientation="vertical"
     >
+=======
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".activity.LoginActivity">
+
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="40dp"
         android:contentDescription="Logo App"
+<<<<<<< HEAD
         android:src="@drawable/kk"
         />
+=======
+        android:src="@drawable/kk" />
+
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Đăng nhập"
         android:textStyle="bold"
         android:textColor="#FF0000"
+<<<<<<< HEAD
         android:textSize="40sp"
         />
+=======
+        android:textSize="40sp" />
+
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_margin="10dp"
         android:hint="email"
+<<<<<<< HEAD
         android:gravity="center"
 
         >
+=======
+        android:gravity="center">
+
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edemailLg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/custtomedit"
             android:paddingLeft="10dp"
+<<<<<<< HEAD
             />
     </com.google.android.material.textfield.TextInputLayout>
+=======
+            tools:text="Le08@gmail.com" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_margin="10dp"
         android:hint="password"
+<<<<<<< HEAD
         android:gravity="center"
         >
+=======
+        android:gravity="center">
+
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edpasswordLg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/custtomedit"
             android:paddingLeft="10dp"
+<<<<<<< HEAD
             />
     </com.google.android.material.textfield.TextInputLayout>
+=======
+            android:inputType="textPassword"
+            tools:text="Le1111" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
     <TextView
         android:id="@+id/txtForgerPass"
         android:layout_width="match_parent"
@@ -62,21 +102,32 @@
         android:text="Forget Password"
         android:padding="10dp"
         android:gravity="end"
+<<<<<<< HEAD
         android:textStyle="italic"
         />
+=======
+        android:textStyle="italic" />
+
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Đăng nhập"
         android:layout_margin="10dp"
+<<<<<<< HEAD
         android:background="@drawable/custtombutton"
         />
+=======
+        android:background="@drawable/custtombutton" />
+
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_horizontal"
+<<<<<<< HEAD
         android:layout_marginTop="30dp"
         >
         <TextView
@@ -84,15 +135,31 @@
             android:layout_height="wrap_content"
             android:text="Bạn chưa có tài khoản? "
             />
+=======
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bạn chưa có tài khoản? " />
+
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
         <TextView
             android:id="@+id/txtSignup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Đăng Ký Ngay"
             android:textStyle="italic"
+<<<<<<< HEAD
             android:textColor="#876400"
             />
     </LinearLayout>
 
 
 </LinearLayout>
+=======
+            android:textColor="#876400" />
+    </LinearLayout>
+
+</LinearLayout>
+>>>>>>> 1d9901e39b48bf3acc1effefba9928e45ecd6962
