@@ -1,5 +1,10 @@
 package com.example.oke.activity;
 
+//Firebase để xác thực người dùng bằng email & password.
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import androidx.annotation.NonNull;
@@ -18,15 +23,15 @@ import com.example.oke.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
 
 public class LoginActivity extends AppCompatActivity {
     private TextInputEditText edmail, edpassword;
     private Button btnLogin;
     private TextView txtSignup;
     private FirebaseAuth mAuth;
+
+    private static final String ADMIN_EMAIL = "admin@gmail.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,33 +42,38 @@ public class LoginActivity extends AppCompatActivity {
         edpassword = findViewById(R.id.edpasswordLg);
         btnLogin = findViewById(R.id.btnLogin);
         txtSignup = findViewById(R.id.txtSignup);
-        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance(); //khoi tao firebase
 
+        // SignUp xong và chuyển qua LoginActivity để tự động điền lại thông tin
         Intent intent = getIntent();
-        if (intent != null) {
-            Bundle ex = intent.getExtras();
-            if (ex != null) {
-                edmail.setText(ex.getString("email"));
-                edpassword.setText(ex.getString("password"));
-            }
+        if (intent != null && intent.getExtras() != null) {
+            edmail.setText(intent.getStringExtra("email"));
+            edpassword.setText(intent.getStringExtra("password"));
         }
 
+        //bat su kien login
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String email = edmail.getText().toString();
-                String password = edpassword.getText().toString();
+                String email = edmail.getText().toString().trim();
+                String password = edpassword.getText().toString().trim();
 
+                // Kiểm tra trống
                 if (email.isEmpty() || password.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "Không được bỏ trống!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
+                // Kiểm tra định dạng email
                 if (!isValidEmail(email)) {
                     Toast.makeText(LoginActivity.this, "Địa chỉ email không hợp lệ!", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                // Nếu là admin thì gán mật khẩu mặc định
+                if (email.equalsIgnoreCase(ADMIN_EMAIL)) {
+                    password = "admin123";
+                }
 
+                // Tiến hành đăng nhập Firebase
                 mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -72,8 +82,16 @@ public class LoginActivity extends AppCompatActivity {
                                     Log.d(TAG, "signInWithEmail:success");
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     Toast.makeText(LoginActivity.this, "Đăng Nhập Thành công", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                    startActivity(intent);
+
+                                    // ➤ Phân biệt admin
+                                    Intent nextIntent;
+                                    if (email.equalsIgnoreCase(ADMIN_EMAIL)) {
+                                        nextIntent = new Intent(LoginActivity.this, AdminHome.class);
+                                    } else {
+                                        nextIntent = new Intent(LoginActivity.this, HomeActivity.class);
+                                    }
+
+                                    startActivity(nextIntent);
                                     finish();
                                 } else {
                                     Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -85,12 +103,11 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        txtSignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in = new Intent(LoginActivity.this, SignupActivity.class);
-                startActivity(in);
-            }
+
+        //Chuyển sang màn hình Đăng ký
+        txtSignup.setOnClickListener(view -> {
+            Intent in = new Intent(LoginActivity.this, SignupActivity.class);
+            startActivity(in);
         });
     }
 

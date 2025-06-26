@@ -30,6 +30,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -40,11 +44,13 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.firebase.auth)
     implementation(libs.credentials)
-    implementation(libs.credentials.play.services.auth)
     implementation(libs.googleid)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+
     // Firebase BoM – đảm bảo đồng bộ version
     implementation(platform("com.google.firebase:firebase-bom:33.15.0"))
 // Firebase Auth
@@ -63,6 +69,26 @@ dependencies {
     //youtube
     implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.1")
     implementation ("com.github.denzcoskun:ImageSlideshow:0.1.2")
+
     implementation("androidx.viewpager2:viewpager2:1.0.0")
+    //glider
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
+    //RxJava
+    implementation ("io.reactivex.rxjava3:rxandroid:3.0.0")
+    implementation ("io.reactivex.rxjava3:rxjava:3.0.0")
+    // Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0")
+
+    // PaperDB
+    implementation("io.github.pilgr:paperdb:2.7.2")
+    implementation ("com.google.firebase:firebase-messaging:23.4.1")
+
+    implementation ("com.github.dhaval2404:imagepicker:2.1")
+
+    // EventBus
+    implementation("org.greenrobot:eventbus:3.0.0")
 
 }

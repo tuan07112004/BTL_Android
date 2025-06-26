@@ -6,19 +6,22 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.HomeActivity">
+    tools:context=".activity.AdminHome">
+
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawerlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toobarmanhinhchinh"
                 app:title="Trang chính"
-                android:background="#020202"
+                android:background="#FFC107"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize" >
                 <LinearLayout
@@ -32,15 +35,8 @@
                         android:layout_height="40dp"
                         android:layout_marginRight="5dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_search_24"/>
-                    <ImageView
-                        android:id="@+id/image_mess"
-                        android:src="@drawable/ic_messe_24"
-                        android:layout_marginLeft="7dp"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="7dp"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"/>
+                        android:src="@drawable/ic_search_24" />
+
                     <FrameLayout
                         android:id="@+id/framegiohang"
                         android:layout_marginRight="10dp"
@@ -53,27 +49,17 @@
                             android:layout_height="28dp"/>
                         <ImageView
                             android:layout_marginTop="15dp"
-                            android:layout_width="58dp"
+                            android:layout_width="48dp"
                             android:layout_height="48dp"
                             android:src="@drawable/ic_cart_24" />
                     </FrameLayout>
                 </LinearLayout>
             </androidx.appcompat.widget.Toolbar>
-            <androidx.cardview.widget.CardView
-                android:layout_margin="5dp"
-                app:cardCornerRadius="5dp"
-                android:elevation="8dp"
+
+            <ViewFlipper
+                android:id="@+id/viewlipper"
                 android:layout_width="match_parent"
-                android:layout_height="200dp">
-                <com.denzcoskun.imageslider.ImageSlider
-                    android:id="@+id/image_slider"
-                    android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    app:iss_auto_cycle="true"
-                    app:iss_period="1000"
-                    app:iss_delay="2000"
-                    app:iss_text_align="CENTER"/>
-            </androidx.cardview.widget.CardView>
+                android:layout_height="200dp" />
 
             <LinearLayout
                 android:background="#000000"
@@ -81,6 +67,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
+
                 <TextView
                     android:textSize="20sp"
                     android:layout_marginLeft="10dp"
@@ -89,7 +76,6 @@
                     android:text="Sản phẩm mới nhất"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
-
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycleview"
@@ -105,6 +91,7 @@
             android:layout_gravity="start"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <ListView
                 android:layout_marginTop="10dp"
                 android:id="@+id/lisviewmanhinhchinh"
@@ -112,4 +99,5 @@
                 android:layout_height="wrap_content" />
         </com.google.android.material.navigation.NavigationView>
     </androidx.drawerlayout.widget.DrawerLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

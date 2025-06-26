@@ -2,7 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Quyền Internet & kiểm tra mạng -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,37 +18,46 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Oke"
-        tools:targetApi="31">
-        <activity
-            android:name="com.example.oke.ForgotPassActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.oke.LoginOtpActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.oke.ChoiceLoginActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.oke.activity.HomeActivity"
-            android:exported="true" />
+        tools:targetApi="31"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:usesCleartextTraffic="true">
 
+        <!-- ✅ Màn hình splash là Launcher -->
         <activity
             android:name="com.example.oke.activity.MainActivity"
-            android:exported="true" />
-
-        <activity
-            android:name="com.example.oke.activity.SignupActivity"
-            android:exported="false" />
-
-        <!-- 👇 LoginActivity là màn hình khởi động -->
-        <activity
-            android:name="com.example.oke.activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- ✅ Màn hình đăng nhập -->
+        <activity
+            android:name="com.example.oke.activity.LoginActivity"
+            android:exported="true" />
+
+        <!-- ✅ Màn hình đăng ký -->
+        <activity
+            android:name="com.example.oke.activity.SignupActivity"
+            android:exported="false" />
+
+        <!-- ✅ Trang chủ Admin -->
+        <activity
+            android:name="com.example.oke.activity.AdminHome"
+            android:exported="true" />
+
+        <!-- ✅ Trang chủ User -->
+        <activity
+            android:name="com.example.oke.activity.HomeActivity"
+            android:exported="true" />
+
+        <activity android:name=".activity.ThemSPActivity"
+                    android:exported="true"/>
+
+        <activity
+            android:name="com.example.oke.activity.QuanliActivity"
+            android:exported="true" />
 
     </application>
 </manifest>
