@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -67,6 +68,7 @@ public class HomeActivity extends AppCompatActivity {
      List<SanPhamMoi> mangSpMoi;
     SanPhamMoiAdapter spAdapter;
     ImageSlider imageSlider;
+    ImageView imgsearch;
     FirebaseFirestore db;
 
     @Override
@@ -235,7 +237,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
     private void Anhxa() {
-
+        imgsearch = findViewById(R.id.imgsearch);
         toolbar = findViewById(R.id.toobarmanhinhchinh);
         imageSlider = findViewById(R.id.image_slider);
 
@@ -249,6 +251,16 @@ public class HomeActivity extends AppCompatActivity {
         // Khởi tạo LIST
         mangloaisp = new ArrayList<>();
         mangSpMoi = new ArrayList<>();
+
+        imgsearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 

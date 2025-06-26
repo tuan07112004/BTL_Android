@@ -25,7 +25,7 @@ public class DienThoaiAdapter extends RecyclerView.Adapter<DienThoaiAdapter.MyVi
     Context context;
     List<SanPhamMoi> array;
 
-    public DienThoaiAdapter(Context context, List<SanPhamMoi> array) {
+    public DienThoaiAdapter(List<SanPhamMoi> array, Context context) {
         this.array = array;
         this.context = context;
     }

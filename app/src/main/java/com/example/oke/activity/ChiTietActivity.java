@@ -24,7 +24,7 @@ import java.util.List;
 
 public class ChiTietActivity extends AppCompatActivity {
     TextView tensp, giasp, mota;
-    Button btnthem;
+    Button btnthem, btnyoutobe;
     ImageView imghinhanh;
     Spinner spinner;
     Toolbar toolbar;
@@ -36,8 +36,25 @@ public class ChiTietActivity extends AppCompatActivity {
         initView();
         ActionToolBar();
         initData();
+        initControl();
     }
 
+    private void initControl() {
+
+        btnyoutobe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChiTietActivity.this, YouTubeActivity.class);
+                intent.putExtra("linkvideo", sanPhamMoi.getLinkvideo());
+                startActivity(intent);
+
+
+
+            }
+        });
+
+
+    }
     private void initData() {
         try {
             Intent intent = getIntent();
@@ -77,5 +94,6 @@ public class ChiTietActivity extends AppCompatActivity {
         imghinhanh = findViewById(R.id.imgchitiet);
         spinner = findViewById(R.id.spinner);
         toolbar = findViewById(R.id.toobar);
+        btnyoutobe =findViewById(R.id.btnyoutube);
     }
 } // Thêm dấu đóng ngoặc này

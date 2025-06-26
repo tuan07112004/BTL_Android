@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.oke"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.oke"
         minSdk = 30
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -61,7 +61,7 @@ dependencies {
     // bragde
     implementation ("com.nex3z:notification-badge:1.0.4")
     //youtube
-    implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.1")
+    implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:11.0.0")
     implementation ("com.github.denzcoskun:ImageSlideshow:0.1.2")
     implementation("androidx.viewpager2:viewpager2:1.0.0")
 
@@ -75,5 +75,6 @@ dependencies {
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0")
+
 
 }

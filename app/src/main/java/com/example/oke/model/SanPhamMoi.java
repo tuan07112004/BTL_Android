@@ -9,24 +9,24 @@ public class SanPhamMoi implements Serializable {
     String giasp;
     String mota;
     int loai;
-//    String linkvideo;
-//    int sltonkho;
+    String linkvideo;
+    int sltonkho;
 
-//    public int getSltonkho() {
-//        return sltonkho;
-//    }
-//
-//    public void setSltonkho(int sltonkho) {
-//        this.sltonkho = sltonkho;
-//    }
-//
-//    public String getLinkvideo() {
-//        return linkvideo;
-//    }
-//
-//    public void setLinkvideo(String linkvideo) {
-//        this.linkvideo = linkvideo;
-//    }
+    public int getSltonkho() {
+        return sltonkho;
+    }
+
+    public void setSltonkho(int sltonkho) {
+        this.sltonkho = sltonkho;
+    }
+
+    public String getLinkvideo() {
+        return linkvideo;
+    }
+
+    public void setLinkvideo(String linkvideo) {
+        this.linkvideo = linkvideo;
+    }
 
     public int getId() {
         return id;

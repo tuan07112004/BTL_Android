@@ -108,7 +108,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
         android:layout_height="0dp">
+        <androidx.appcompat.widget.AppCompatButton
+            android:text="Xem Video ==>"
 
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="#F44336"
+            android:id="@+id/btnyoutube"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <TextView
             android:text="Mô tả chi tiết sản phẩm"
